@@ -253,7 +253,7 @@ pub struct WindowAttributes {
   /// ## Platform-specific:
   ///
   /// **Android / iOS:** Unsupported.
-  pub focusable: Option<bool>,
+  pub focusable: bool,
 
   /// Prevents the window contents from being captured by other apps.
   ///
@@ -300,7 +300,7 @@ impl Default for WindowAttributes {
       window_icon: None,
       preferred_theme: None,
       focused: true,
-      focusable: None,
+      focusable: true,
       content_protection: false,
       visible_on_all_workspaces: false,
       background_color: None,
@@ -552,7 +552,7 @@ impl WindowBuilder {
   ///
   /// **Android / iOS:** Unsupported.
   #[inline]
-  pub fn with_focusable(mut self, focusable: Option<bool>) -> WindowBuilder {
+  pub fn with_focusable(mut self, focusable: bool) -> WindowBuilder {
     self.window.focusable = focusable;
     self
   }
