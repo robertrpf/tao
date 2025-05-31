@@ -552,8 +552,8 @@ impl WindowBuilder {
   ///
   /// **Android / iOS:** Unsupported.
   #[inline]
-  pub fn with_focusable(mut self, focusable: bool) -> WindowBuilder {
-    self.window.focusable = Some(focusable);
+  pub fn with_focusable(mut self, focusable: Option<bool>) -> WindowBuilder {
+    self.window.focusable = focusable;
     self
   }
 
